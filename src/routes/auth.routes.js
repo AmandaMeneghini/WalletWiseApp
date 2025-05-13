@@ -14,8 +14,8 @@ function AuthRoutes(){
                 component={SignIn}
                 options={{
                     headerShown: false
-                }} //tira o header
-             />
+                }}
+            />
 
             <AuthStack.Screen
                 name="SignUp"
@@ -30,7 +30,7 @@ function AuthRoutes(){
                     headerTitle: 'Voltar',
                     headerBackTitleVisible: false,
                 }}
-             />
+            />
         </AuthStack.Navigator>
     )
 }
