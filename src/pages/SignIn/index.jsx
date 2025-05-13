@@ -1,7 +1,7 @@
 import React from "react";
-import {View, Text, KeyboardAvoidingView, Image, TextInput, TouchableOpacity, Platform} from 'react-native'
+import {View, Text, KeyboardAvoidingView, Image, TextInput, TouchableOpacity, Platform} from 'react-native';
 import styles from "./styles";
-import { useNavigation } from '@react-navigation/native' //vamos usar para direcionar para a nossa página de "SignUp"
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function SignIn(){
@@ -9,8 +9,8 @@ export default function SignIn(){
 
     return(
         <View style={styles.background}>
-            <KeyboardAvoidingView  //isso aqui que faz a tela subir quando abre o teclado (funciona de boa no android, já no IOS precisa configurar)
-                behavior={Platform.OS === 'ios' ? 'padding' : ''} //para o IOS
+            <KeyboardAvoidingView
+                behavior={Platform.OS === 'ios' ? 'padding' : ''}
                 enabled  //ative
                 style={styles.container}
             >
@@ -29,7 +29,7 @@ export default function SignIn(){
                         placeholder="Sua senha"
                     />
                 </View>
-                    {/*esse "activeOpacity tira a opaciadade do Touchable, sendo 1 igual a 100%" */}
+
                 <TouchableOpacity style={styles.submitButton} activeOpacity={0.8}>
                     <Text style={styles.submitButtonText}>Acessar</Text>
                 </TouchableOpacity>
