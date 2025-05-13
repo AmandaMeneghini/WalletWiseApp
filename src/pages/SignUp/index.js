@@ -1,10 +1,18 @@
-import React from "react";
-import {View, Text, KeyboardAvoidingView, TextInput, TouchableOpacity, Platform} from 'react-native'
+import React, {useContext} from "react";
+import {View, Text, KeyboardAvoidingView, TextInput, TouchableOpacity, Platform} from 'react-native';
 
-import styles from '../SignIn/styles'
+import styles from '../SignIn/styles';
 
+import { AuthContext } from '../../contexts/auth';
 
 export default function SignUp(){
+
+    const { user } = useContext(AuthContext);
+
+    function handleSignUp(){
+        console.log(user.name);
+    }
+
     return(
         <View style={styles.background}>
             <KeyboardAvoidingView
@@ -32,7 +40,7 @@ export default function SignUp(){
                     />
                 </View>
 
-                <TouchableOpacity style={styles.submitButton} activeOpacity={0.8}>
+                <TouchableOpacity style={styles.submitButton} activeOpacity={0.8} onPress={handleSignUp}>
                     <Text style={styles.submitButtonText}>Cadastrar</Text>
                 </TouchableOpacity>
 
