@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, ActivityIndicator} from 'react-native'
 import AuthRoutes from './auth.routes';
-import BootSplash from 'react-native-bootsplash'
+
 
 function Routes(){
 
