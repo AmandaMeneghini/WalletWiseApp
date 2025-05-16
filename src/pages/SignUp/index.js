@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext, useState } from "react";
 import {View, Text, KeyboardAvoidingView, TextInput, TouchableOpacity, Platform} from 'react-native';
 
 import styles from '../SignIn/styles';
@@ -7,10 +7,13 @@ import { AuthContext } from '../../contexts/auth';
 
 export default function SignUp(){
 
-    const { user } = useContext(AuthContext);
+    const { signUp } = useContext(AuthContext);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     function handleSignUp(){
-        console.log(user.name);
+        signUp(name, email, password);
     }
 
     return(
@@ -25,18 +28,25 @@ export default function SignUp(){
                     <TextInput
                         style={styles.input}
                         placeholder="Nome"
+                        value={name}
+                        onChangeText={(text) => setName(text)}
                     />
                 </View>
                 <View style={styles.areaInput}>
                     <TextInput
                         style={styles.input}
                         placeholder="Seu email"
+                        value={email}
+                        onChangeText={(text) => setEmail(text)}
                     />
                 </View>
                 <View style={styles.areaInput}>
                     <TextInput
                         style={styles.input}
                         placeholder="Sua senha"
+                        value={password}
+                        onChangeText={(text) => setPassword(text)}
+                        secureTextEntry={true}
                     />
                 </View>
 
