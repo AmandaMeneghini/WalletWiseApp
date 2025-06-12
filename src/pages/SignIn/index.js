@@ -11,7 +11,7 @@ export default function SignIn(){
         <View style={styles.background}>
             <KeyboardAvoidingView
                 behavior={Platform.OS === 'ios' ? 'padding' : ''}
-                enabled  //ative
+                enabled
                 style={styles.container}
             >
                 <Image
